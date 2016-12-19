@@ -1,0 +1,24 @@
+<ion-view title="Estudiante">
+  <ion-content padding="true">
+    <div class="card">
+      <div class="item item-divider" style="background-color:limegreen; color:white;">
+        Info:
+      </div>
+      <div class="item">
+        <p><b>Nombre: </b>{{student.name}}</p>
+        <p><b>Dirección: </b>{{student.address}}</p>
+        <p><b>Tlf. Casa: </b>{{student.phones.home}}</p>
+        <p><b>Tlf. Trabajo: </b>{{student.phones.work}}</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="item item-divider" style="background-color: deepskyblue; color:white;">
+        Asignaturas matriculadas
+      </div>
+      <div class="item" ng-repeat="subject in student.subjects">
+        <h2>{{subject.name}}</h2>
+        <p><b>Periodo:</b> {{subject.when}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

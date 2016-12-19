@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Main Layout</title>
+
+    <!-- Bootstrap -->
+    <link href="../bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--<link href="../assets/css/main.css" rel="stylesheet">-->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body ng-app="app" style="background-color:#ccccff;">
+
+
+<div class="container  col-md-10 col-md-offset-1" style="margin-top:50px;">
+        <ng-view></ng-view>
+</div>
+
+
+
+
+
+<!--AngularJs -->
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-route/angular-route.min.js"></script>
+
+<script type="text/javascript" src="../app.js"></script>
+<script type="text/javascript" src="../controllers/controller.js"></script>
+
+</body>
+</html>

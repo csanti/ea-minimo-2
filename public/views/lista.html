@@ -1,0 +1,53 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h1>Lista de asignaturas</h1></div>
+    <div class="panel-body" ng-init="getSubjects()">
+        <h3>Filtros</h3>
+        <form class="simple-form">
+            <div class="form-group">
+                <label for="user-alumno_id">Name</label>
+                <input type="text" class="form-control" id="user-alumno_id" placeholder="Name" ng-model="filter.name">
+            </div>
+            <div class="form-group">
+                <label for="user-name">Periodo</label>
+                <input type="text" class="form-control" id="user-name" placeholder="Periodo" ng-model="filter.when">
+            </div>
+
+            <input type="submit" ng-click="getFilteredSubjects(filter)" value="Filtrar" class="btn btn-default">
+        </form>
+        <hr>
+        <h4>Puedes hacer click sobre name o nº de alumnos para ordenar la tabla</h4>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-4">
+                        <a ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                            Name
+                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-4">When</th>
+                    <th class="col-md-2">
+                        <a ng-click="sortType = 'students.length'; sortReverse = !sortReverse">
+                            Nº alumnos
+                            <span ng-show="sortType == 'students.length' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'students.length' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="subject in subjects | orderBy:sortType:sortReverse">
+                    <td>{{subject.name}}</td>
+                    <td>{{subject.when}}</td>
+                    <td>{{subject.students.length}}</td>
+                    <td><a ng-href="#subject/{{subject._id}}"><button type="button" class="btn btn-danger">Ver</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

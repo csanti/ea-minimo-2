@@ -1,0 +1,17 @@
+<ion-view title="Asignaturas">
+  <ion-content padding="true" class="has-header">
+    <button class="button button-full button-balanced" ng-click="showFilter()">
+      Filtrar asignaturas
+    </button>
+    <button class="button button-full button-assertive" ng-click="getSubjects()">
+      Eliminar filtro
+    </button>
+    <ion-list ng-init="getSubjects()">
+      <ion-item ng-repeat="subject in subjects | orderBy:sortBy:sortReverse" href="#/app/subject/{{subject._id}}">
+        <h2>{{subject.name}}</h2>
+        <h3>{{subject.when}} - {{subject.students.length}} estudiantes</h3>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

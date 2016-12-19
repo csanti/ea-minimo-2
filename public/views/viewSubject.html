@@ -1,0 +1,27 @@
+<div class="panel panel-default" ng-init="getSubject()">
+    <div class="panel-heading"><h1>Ver asignatura</h1></div>
+    <div class="panel-body">
+        <h4><b>Name: </b>{{subject.name}}</h4><hr>
+        <h4><b>When: </b>{{subject.when}}</h4><hr>
+        <h4><b>Alumnos: </b></h4>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="col-md-3">Nombre</th>
+                <th class="col-md-3">Dirección</th>
+                <th class="col-md-3">Tlf. Casa</th>
+                <th class="col-md-3">Tlf. Work</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="student in subject.students">
+                <td>{{student.name}}</td>
+                <td>{{student.address}}</td>
+                <td>{{student.phones.home}}</td>
+                <td>{{student.phones.work}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <a ng-href="#/"><button type="button" class="btn btn-primary pull-right">Volver</button></a>
+    </div>
+</div>

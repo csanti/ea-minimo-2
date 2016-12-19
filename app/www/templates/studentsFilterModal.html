@@ -1,0 +1,30 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Filtrar Estudiantes</h1>
+
+    <button class="button button-primary" ng-click="closeFilter()">Cerrar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="setFilter(filter, sortBy)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Nombre</span>
+          <input type="text" ng-model="filter.name">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Ordenar por
+          </div>
+          <select ng-model="sortBy">
+            <option value="name">Nombre</option>
+            <option value="subjects.length">Nº asignaturas matriculadas</option>
+          </select>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Filtrar</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
